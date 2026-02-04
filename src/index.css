@@ -1,17 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
 /* ===============================
    GLOBAL FIX FOR FIXED NAVBAR
    =============================== */
 
-   .app-content {
-    padding-top: 4rem; /* navbar height */
+.app-content {
+  padding-top: 4rem; /* navbar height */
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding-top: 3.5rem;
   }
-  
-  @media (max-width: 768px) {
-    .app-content {
-      padding-top: 3.5rem;
-    }
-  }
+}
   

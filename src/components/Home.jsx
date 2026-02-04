@@ -1,16 +1,30 @@
+import { useState, useEffect } from "react";
 import "./Home.css";
 import teamImage from "../assets/team-image.jpg";
 import Contact from "./Contact.jsx";
-import Navbar from "./Navbar.jsx"
+import Navbar from "./Navbar.jsx";
+
 function Home() {
-  const [backendMsg, setBackendMsg] = useState("");
+  const [backendMsg, setBackendMsg] = useState("Loading backend status...");
+
   useEffect(() => {
-    // Fetch from backend
-    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/message`)
-      .then(res => res.json())
-      .then(data => setBackendMsg(data.msg))
-      .catch(err => console.error(err)); // optional, always good to handle errors
+    // Screenshot ke mutabik naya URL ye hai:
+    const apiUrl = import.meta.env.VITE_API_BASE_URL || 'https://project-orion-blti.onrender.com';
+    
+    fetch(`${apiUrl}/api/message`)
+      .then(res => {
+        if (!res.ok) throw new Error(`Server responded with ${res.status}`); 
+        return res.json();
+      })
+      .then(data => {
+        setBackendMsg(data.msg);
+      })
+      .catch(err => {
+        console.error("Dikkat hai:", err.message);
+        setBackendMsg("Backend se connection nahi ho paya (URL check karein)");
+      });
   }, []);
+
   return (
     <div className="home">
       <Navbar />
@@ -22,6 +36,10 @@ function Home() {
           <div className="hero-text">
             <h1>PROJECT ORION</h1>
             <p>Student-led engineering project at the University of Leeds</p>
+            {/* Backend message display */}
+            <div className="backend-status" style={{ marginTop: '15px', fontWeight: 'bold' }}>
+              <p>Status: {backendMsg}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -35,7 +53,7 @@ function Home() {
         </p>
       </section>
 
-      {/* Contact only on Home */}
+      {/* Contact Section */}
       <Contact />
     </div>
   );

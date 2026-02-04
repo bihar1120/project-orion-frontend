@@ -7,10 +7,7 @@ export default function Olympus() {
     <div className="page-offset">
       <h1>Olympus Team</h1>
 
-      {/* Full team photo */}
-      <div className="team-photo">
-        <img src="/images/olympus-team.jpg" alt="Olympus Team" />
-      </div>
+      
 
       {/* About the team */}
       <div className="team-about about-text">
