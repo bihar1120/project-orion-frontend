@@ -1,0 +1,132 @@
+/* ===============================
+   GLOBAL FIX – NAVBAR OVERLAP
+   =============================== */
+   .page-offset {
+    position: relative;
+    overflow: hidden;
+    padding-top: 4rem;
+    background:
+      radial-gradient(circle at top left, rgba(220,38,38,0.35), transparent 45%),
+      radial-gradient(circle at bottom right, rgba(59,130,246,0.25), transparent 50%),
+      linear-gradient(180deg, #05040a, #0b0712); /* DARK space red + blue gradient */
+  }
+  
+  @media (max-width: 768px) {
+    .page-offset {
+      padding-top: 3.5rem;
+    }
+  }
+  
+  /* ===============================
+     ABOUT SECTION TEXT (WHITE)
+     =============================== */
+  .about-text,
+  .page-offset h1,
+  .page-offset h2,
+  .page-offset h3,
+  .page-offset p,
+  .page-offset span,
+  .page-offset li,
+  .page-offset a {
+    color: #ffffff !important; /* WHITE text everywhere in About / Project Orion */
+  }
+  
+  /* ===============================
+     TEAM SECTION – SAME AS ABOUT
+     =============================== */
+  .team-section {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 2rem;
+    background:
+      radial-gradient(circle at top left, rgba(220,38,38,0.35), transparent 45%),
+      radial-gradient(circle at bottom right, rgba(59,130,246,0.25), transparent 50%),
+      linear-gradient(180deg, #05040a, #0b0712); /* EXACTLY same as About */
+    color: #ffffff; /* WHITE text by default */
+  }
+  
+  /* ===============================
+     TEAM CARD STYLES – Slightly darker
+     =============================== */
+     .team-card {
+      border: none; /* ya rgba(255,255,255,0.05) for very subtle edge */
+      border-radius: 1.3rem;
+      padding: 1.8rem;
+    
+      /* Same as page background */
+      background:
+        radial-gradient(circle at top left, rgba(220,38,38,0.35), transparent 45%),
+        radial-gradient(circle at bottom right, rgba(59,130,246,0.25), transparent 50%),
+        linear-gradient(180deg, #05040a, #0b0712);
+    
+      box-shadow: 0 0 0 transparent; /* remove extra shadow */
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    
+      color: #ffffff; /* text white to stand out */
+    }
+    
+    /* Optional hover for slight lift/glow */
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 10px 25px rgba(59,130,246,0.3),
+        0 0 20px rgba(220,38,38,0.3);
+    }
+    
+    .team-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: none; /* remove glow if you want perfect blending */
+    }
+    
+ 
+  
+  
+  .team-card:hover::after {
+    opacity: 1;
+  }
+  
+  /* ===============================
+     ANIMATED ENERGY BUTTON
+     =============================== */
+  .team-button {
+    margin-top: 2rem;
+    padding: 0.7rem 2rem;
+    border-radius: 0.9rem;
+    font-weight: 600;
+    letter-spacing: .6px;
+    color: #ffffff;
+    background: linear-gradient(
+      120deg,
+      #2563eb,
+      #dc2626,
+      #2563eb
+    );
+    background-size: 260% 260%;
+    border: none;
+    cursor: pointer;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  
+  .team-button:hover {
+    animation: gradientMove 2s ease infinite;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 
+      0 16px 40px rgba(0,0,0,.6),
+      0 0 28px rgba(59,130,246,.8),
+      0 0 24px rgba(239,68,68,.75);
+  }
+  
+  /* ===============================
+     GRADIENT ANIMATION
+     =============================== */
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  

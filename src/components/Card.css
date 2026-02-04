@@ -1,0 +1,52 @@
+x.ui-card {
+    position: relative;
+    overflow: hidden;
+  
+    /* CARD WHITE / LIGHT */
+    background: #ffffff;            /* pure white */
+    border-radius: 1.4rem;
+    padding: 1.85rem;
+    border: 1px solid rgba(37,99,235,0.15);
+  
+    /* TEXT BLACK */
+    color: #0f172a;
+  
+    box-shadow: 0 14px 30px rgba(0,0,0,.12);
+  
+    transition:
+      transform .45s cubic-bezier(.2,.8,.2,1),
+      box-shadow .45s ease;
+  }
+  
+  .ui-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  
+    /* 👇 AAPKA EXACT GRADIENT */
+    background:
+      radial-gradient(circle at top left, rgba(220,38,38,0.35), transparent 45%),
+      radial-gradient(circle at bottom right, rgba(59,130,246,0.25), transparent 50%),
+      linear-gradient(180deg, #05040a, #0b0712);
+  
+    opacity: 0;                 /* pehle hidden */
+    transition: opacity .45s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .ui-card:hover::after {
+    opacity: 1;
+  }
+  .ui-card > * {
+    position: relative;
+    z-index: 1;
+  }
+  .ui-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow:
+      0 40px 90px rgba(0,0,0,.75),
+      0 0 45px rgba(220,38,38,.5),
+      0 0 45px rgba(59,130,246,.45);
+  }
+  

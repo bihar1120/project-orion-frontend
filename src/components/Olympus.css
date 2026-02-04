@@ -1,0 +1,36 @@
+/* =========================
+   OLYMPUS CARD EXTENSION
+========================= */
+/* =========================
+   FULL PAGE BACKGROUND
+========================= */
+
+.olympus-page {
+    min-height: 100vh;        /* 👈 VERY IMPORTANT */
+    padding: 4rem 1.5rem;
+  
+    background:
+      radial-gradient(circle at top left, rgba(220,38,38,0.35), transparent 45%),
+      radial-gradient(circle at bottom right, rgba(59,130,246,0.25), transparent 50%),
+      linear-gradient(180deg, #05040a, #0b0712);
+  
+    color: #ffffff;
+  }
+  
+
+.ui-card.olympus::after {
+    background:
+      radial-gradient(circle at top left, rgba(220,38,38,0.35), transparent 45%),
+      radial-gradient(circle at bottom right, rgba(59,130,246,0.25), transparent 50%),
+      linear-gradient(180deg, #05040a, #0b0712);
+  }
+  
+  /* Olympus hover glow */
+  .ui-card.olympus:hover {
+    color: #ffffff;
+    box-shadow:
+      0 40px 90px rgba(0,0,0,.75),
+      0 0 45px rgba(220,38,38,.5),
+      0 0 45px rgba(59,130,246,.45);
+  }
+  

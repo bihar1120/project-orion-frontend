@@ -1,0 +1,116 @@
+/* ===== Job Apply Section Background (Nebula + Blue Overlay) ===== */
+.job-apply {
+    position: relative;
+    padding: 4rem 1rem;
+    background-image: url('../assets/orion-nebula.jpg'); /* same background */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+  
+  /* Blue overlay */
+  .job-apply::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 128, 0.55);
+    z-index: 0;
+  }
+  
+  /* Content above overlay */
+  .job-apply > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ===== Heading ===== */
+  .job-apply h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e97878;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+  
+  /* ===== Optional description (agar add karo) ===== */
+  .job-apply p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #f5f5f5;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+    opacity: 0.9;
+  }
+  
+  /* ===== Form Card (Glass Effect) ===== */
+  .job-apply form {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* ===== Labels ===== */
+  .job-apply label {
+    font-weight: bold;
+  }
+  
+  /* ===== Inputs & Textarea ===== */
+  .job-apply input,
+  .job-apply textarea {
+    padding: 0.6rem;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+  }
+  
+  .job-apply textarea {
+    resize: vertical;
+  }
+  
+  /* ===== Focus Effect ===== */
+  .job-apply input:focus,
+  .job-apply textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(233, 120, 120, 0.6);
+  }
+  
+  /* ===== File Input ===== */
+  .job-apply input[type="file"] {
+    padding: 0.4rem;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* ===== Submit Button ===== */
+  .job-apply button {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #e97878;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  /* Hover */
+  .job-apply button:hover {
+    background-color: #d85c5c;
+  }
+  
+  /* Disabled state */
+  .job-apply button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  
