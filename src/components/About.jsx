@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
-import "./About.css";
+
 import "./Olympus.css"; // path apne project ke hisaab se
 
 export default function About() {
